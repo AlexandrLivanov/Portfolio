@@ -154,7 +154,7 @@ export const projects = [
     fullDescription:
       "Команда разработала концепцию мероприятия, предложив стиль, декор и визуальные решения для различных носителей. Концепция перекликалась с площадкой Барвиха Luxury Village — лухари деревня. Гостей встречал холл, украшенный атрибутами деревенской жизни — колосья, самовары с квасом, аутентичные узоры, dj-стойка в колодце. Центральным объектом стала трехметровая золотая курочка Ряба и ее золотые яйца в лотке. Кульминацией вечера стал дождь из денег с айдентикой ТНТ и выступление IOWA.",
     role: "Креативный продюсер",
-    image: "https://github.com/AlexandrLivanov/Portfolio/blob/main/Rectangle%202.png?raw=true",
+    image: "https://github.com/AlexandrLivanov/Portfolio/blob/main/%D0%A2%D0%9D%D0%A2%2026.png?raw=true",
     links: {} as Record<string, string>,
   },
   {
@@ -166,7 +166,7 @@ export const projects = [
     fullDescription:
       "Арт-объект с кинетикой и led-растениями установили на катке Флагшток, затем перенесли в ТЦ Галерея. В СПб, Казани, Калининграде и Нижнем Новгороде прошли промо-акции для увеличения установок приложения и участия в конкурсе «Выиграй шоппинг с Николаем Овечкиным». Экспозиция стала площадкой акций и лекций блогера. За установку приложения участники получали призы и шанс выиграть шопинг до 100 000 рублей.",
     role: "Креативный продюсер",
-    image: "https://github.com/AlexandrLivanov/Portfolio/blob/main/Rectangle%203.png?raw=true",
+    image: "https://github.com/AlexandrLivanov/Portfolio/blob/main/%D0%9F%D1%80%D0%BE%D1%80%D0%BE%D0%BA.png?raw=true",
     links: {} as Record<string, string>,
   },
   {
@@ -178,7 +178,7 @@ export const projects = [
     fullDescription:
       "Мероприятие прошло в особняке Леман. Помимо оформления старинного здания, атмосфера 19 века была достигнута при помощи иммерсивного представления. Приглашенные блогеры и журналисты пообщались с жителями той эпохи и стали свидетелями традиционного светского бала позапрошлого века, который в один момент перерос в вог выступление от девушек в пышных платьях и кринолинах.",
     role: "Креативный продюсер",
-    image: "https://github.com/AlexandrLivanov/Portfolio/blob/main/Rectangle%202%20(1).png?raw=true",
+    image: "https://github.com/AlexandrLivanov/Portfolio/blob/main/%D0%9F%D1%80%D0%BE%D1%80%D0%BE%D0%BA.png?raw=true",
     links: {} as Record<string, string>,
   },
   {
@@ -190,7 +190,7 @@ export const projects = [
     fullDescription:
       "Основной посыл — развлечь сотрудников и развить внутренний HR-бренд. Для мероприятия была разработана концепция SteamБанк. Площадка «Профсоюз» была оформлена в стиле стимпанка: обилие технологичных и медных элементов, футуристичные плакаты, иммерсия, фотозона с байком в стиле стимпанк. По всей площадке были расставлены активности: от тира, в котором бросались рюмками до квестов. В ключевой момент — фаер шоу.",
     role: "Креативный продюсер",
-    image: "https://github.com/AlexandrLivanov/Portfolio/blob/main/Rectangle%203%20(1).png?raw=true",
+    image: "https://github.com/AlexandrLivanov/Portfolio/blob/main/%D0%98%D0%BD%D0%B3%D0%BE%D1%81%D1%81%D1%82%D1%80%D0%B0%D1%85.png?raw=true",
     links: {} as Record<string, string>,
   },
 
@@ -204,7 +204,7 @@ export const projects = [
     fullDescription:
       "В ходе нарративного подкаста два игрока путешествуют по стране по следам серийного убийцы, собирая материал для своего тру-крайм подкаста. Они взаимодействуют с местными жителями, сталкиваются с моральными дилеммами и в ключевые моменты игры бросают кости, которые определят их следующие действия. Выпущено 9 полноценных эпизодов.",
     role: "Сценарист, продюсер, ведущий, актер озвучки",
-    image: "https://github.com/AlexandrLivanov/Portfolio/blob/main/Rectangle%203243.png?raw=true",
+    image: "https://github.com/AlexandrLivanov/Portfolio/blob/main/%D0%B4%D0%B2%D0%B0%20%D1%81%D1%82%D1%83%D0%BB%D0%B0.png?raw=true",
     links: { demo: "https://music.yandex.ru/album/25848617" } as Record<string, string>,
   },
   {
@@ -216,7 +216,7 @@ export const projects = [
     fullDescription:
       'В ходе шоу «Вкус мира» ведущий вместе с приглашенным иностранным гостем исследует гастрономические и культурные особенности той или иной страны, не покидая пределы Москвы. В пилотном выпуске ведущий изучает культуру Молдовы через призму национальной кухни и ремесла.',
     role: "Ведущий, режиссер, сценарист",
-    image: "https://github.com/AlexandrLivanov/Portfolio/blob/main/Rectangle%202%20(2).png?raw=true",
+    image: "https://github.com/AlexandrLivanov/Portfolio/blob/main/%D1%82%D1%80%D0%B5%D0%B2%D0%B5%D0%BB.png?raw=true",
     links: { demo: "https://youtu.be/LKjgrIF7xsA?si=V3nxn7hk84U2KBdb" } as Record<string, string>,
   },
   {
@@ -228,7 +228,7 @@ export const projects = [
     fullDescription:
       "Клиенту была предложена масса идей: в том числе моя любимая — побег из музея атома. 10 блогеров заперты в многоэтажном музее, наполненном различными атрибутами атомной промышленности. Внезапно запускается старинный реактор, который может уничтожить музей и его гостей. Цель участников — отключить реактор и выбраться. Каждый этаж — новое испытание и новые знания об атомной промышленности. В итоге клиент остановился на более простом варианте — серия видеороликов в формате стрит-ток.",
     role: "Креативный продюсер",
-    image: "https://github.com/AlexandrLivanov/Portfolio/blob/main/Rectangle%203%20(2).png?raw=true",
+    image: "https://github.com/AlexandrLivanov/Portfolio/blob/main/%D0%B0%D1%82%D0%BE%D0%BC.png?raw=true",
     links: {} as Record<string, string>,
   },
   {
@@ -240,7 +240,7 @@ export const projects = [
     fullDescription:
       "Проект был создан специально для подачи на грант от ИРИ в рамках волны молодежного контента. Проект прошел несколько этапов и дошел до этапа финального питчинга. Я ездил лично защищать проект перед комиссией. По сюжету школьница Аня, увлекающаяся экологией, встречает четырех фантастических существ, управляющих стихиями — элементалов. Вместе они изучают экологические проблемы и современные методы борьбы с ними.",
     role: "Автор идеи, креативный продюсер, сценарист",
-    image: "https://github.com/AlexandrLivanov/Portfolio/blob/main/Rectangle%201.png?raw=true",
+    image: "https://github.com/AlexandrLivanov/Portfolio/blob/main/%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D1%8B.png?raw=true",
     links: {} as Record<string, string>,
   },
 
@@ -254,7 +254,7 @@ export const projects = [
     fullDescription:
       "К сожалению, цена предложения оказалась высока для клиента. Мы отправили им несколько концепций. Но среди них была та, что запала в душу. Это была абсолютно теплая и шикарная по наполнению концепция – Лето в деревне. Здесь были и гонки с яблоками через забор, и сеновал в качестве чилл-зоны, и рыбалка. Эта концепция войдет в пантеон идей, которые я когда-нибудь снова попробую воплотить.",
     role: "Креативный продюсер",
-    image: "https://github.com/AlexandrLivanov/Portfolio/blob/main/Rectangle%201%20(1).png?raw=true",
+    image: "https://github.com/AlexandrLivanov/Portfolio/blob/main/%D0%BB%D0%B5%D1%82%D0%BE%20%D0%B2%20%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%BD%D0%B5.png?raw=true",
     links: {} as Record<string, string>,
   },
   {
@@ -266,7 +266,7 @@ export const projects = [
     fullDescription:
       "Фестиваль для сотрудников компании и их семей в Москве в честь 18-ти летия компании. Клиент выбрал свое постоянное агентство. Но среди наших идей была концепция, которая передавала летний вайб на 100%. «Совершенно летние» — это фестиваль о летней и взрослой свободе. Большой бассейн, гигантский бирпонг, зона для серфинга, гонки на садовых тачках и многое другое — могло случиться, но случится когда-нибудь потом.",
     role: "Креативный продюсер",
-    image: "https://github.com/AlexandrLivanov/Portfolio/blob/main/Rectangle%201%20(2).png?raw=true",
+    image: "https://github.com/AlexandrLivanov/Portfolio/blob/main/%D1%84%D0%B8%D0%BA%D1%81.png?raw=true",
     links: {} as Record<string, string>,
   },
   {
@@ -278,7 +278,7 @@ export const projects = [
     fullDescription:
       "Проактив для российского подразделения популярнейшей марки смартфонов. Цель — продвижение продуктов бренда для творческой аудитории. Одна из идей: бренд интегрируется в кинофестиваль с собственной специальной номинацией, чтобы показать: смартфон бренда — это полноценный инструмент для создания кино. Молодые режиссеры получают технику бренда и одинаковые сюжетные наброски, но раскрывают их по-разному. В сопровождение — influence стратегия, digital спецпроект и варианты для роликов блогеров.",
     role: "Креативный продюсер",
-    image: "https://github.com/AlexandrLivanov/Portfolio/blob/main/Frame%20312.png?raw=true",
+    image: "https://github.com/AlexandrLivanov/Portfolio/blob/main/%D1%81%D0%B0%D0%BC%D1%81%D1%83%D0%BD%D0%B3.png?raw=true",
     links: {} as Record<string, string>,
   },
   {
@@ -290,7 +290,7 @@ export const projects = [
     fullDescription:
       "Спецпроект для продвижения продуктов банка. Одна из концепций — интерактивная карта желаний в приложении. Карта была бы удобной для сбережений и визуализаций своих целей. Также на основе этой карты банк делал индивидуальные офферы. Дополнительно снимается шоу с блогерами, которые исполняют желания людей. Блогер приезжает в гости к клиенту банка и на протяжении всего дня исполняет его желания, покупая все на карту банка.",
     role: "Креативный продюсер",
-    image: "https://github.com/AlexandrLivanov/Portfolio/blob/main/Frame%20313.png?raw=true",
+    image: "https://github.com/AlexandrLivanov/Portfolio/blob/main/%D1%80%D0%BE%D0%BA%D0%B5%D1%82.png?raw=true",
     links: {} as Record<string, string>,
   },
   {
@@ -302,7 +302,7 @@ export const projects = [
     fullDescription:
       "Процесс пока на стадии переговоров. Мы провели ресерчинг для того, чтобы и название, и дизайн, и подача в ATL и BTL активациях была аутентичной. Для нейминга мы выбрали слово ОМО, так как в корейском сленге это означает «О мой бог». Название отсылается к родине продукта и просто для запоминания. В концептуальном предложении: креативная рамка, идеи для TV и OLV, BTL активации в ТЦ, influence стратегия, digital спецпроекты.",
     role: "Креативный продюсер",
-    image: "https://github.com/AlexandrLivanov/Portfolio/blob/main/Rectangle%203%20(3).png?raw=true",
+    image: "https://github.com/AlexandrLivanov/Portfolio/blob/main/%D0%9E%D0%9C%D0%9E.png?raw=true",
     links: {} as Record<string, string>,
   },
 ];
