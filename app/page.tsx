@@ -19,12 +19,63 @@ import {
   Image,
   ExternalLink,
   Phone,
+  Menu,
 } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
+      {/* Side Menu Button */}
+      <div className="fixed left-4 top-4 z-50">
+        <button
+          onClick={() => {
+            const menu = document.getElementById("side-menu");
+            if (menu) menu.classList.toggle("translate-x-0");
+          }}
+          className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 text-white shadow-lg transition-all hover:scale-105"
+        >
+          <Menu className="h-5 w-5" />
+        </button>
+      </div>
+
+      {/* Side Menu */}
+      <div
+        id="side-menu"
+        className="fixed left-0 top-0 z-40 h-full w-64 -translate-x-full transform border-r border-border/40 bg-background/95 backdrop-blur-xl transition-transform duration-300"
+      >
+        <div className="flex h-full flex-col gap-2 p-6 pt-20">
+          <a
+            href="#about"
+            onClick={() => document.getElementById("side-menu")?.classList.toggle("translate-x-0")}
+            className="rounded-xl px-4 py-3 text-sm font-medium text-muted-foreground transition-all hover:bg-secondary hover:text-foreground"
+          >
+            Обо мне
+          </a>
+          <a
+            href="#experience"
+            onClick={() => document.getElementById("side-menu")?.classList.toggle("translate-x-0")}
+            className="rounded-xl px-4 py-3 text-sm font-medium text-muted-foreground transition-all hover:bg-secondary hover:text-foreground"
+          >
+            Опыт работы
+          </a>
+          <a
+            href="#skills"
+            onClick={() => document.getElementById("side-menu")?.classList.toggle("translate-x-0")}
+            className="rounded-xl px-4 py-3 text-sm font-medium text-muted-foreground transition-all hover:bg-secondary hover:text-foreground"
+          >
+            Навыки
+          </a>
+          <a
+            href="#projects"
+            onClick={() => document.getElementById("side-menu")?.classList.toggle("translate-x-0")}
+            className="rounded-xl px-4 py-3 text-sm font-medium text-muted-foreground transition-all hover:bg-secondary hover:text-foreground"
+          >
+            Портфолио
+          </a>
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section className="gradient-hero-dark relative overflow-hidden px-4 pb-20 pt-16 sm:pt-24">
         <div className="pattern-grid absolute inset-0 opacity-30" />
@@ -76,12 +127,24 @@ export default function Home() {
                 {profile.email}
               </a>
             </div>
+
+            <a
+              href="https://drive.google.com/drive/folders/1n1yExstearYnEaTfkah6Hmr6ZPMj8LS4?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 inline-flex w-full max-w-md items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 px-6 py-3 text-sm font-medium text-white shadow-lg transition-all hover:scale-105"
+            >
+              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Скачать резюме и портфолио PDF
+            </a>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section className="border-b border-border/40 px-4 py-16">
+      <section id="about" className="border-b border-border/40 px-4 py-16">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-8 md:grid-cols-3">
             <div className="md:col-span-2">
@@ -110,7 +173,7 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-      <section className="border-b border-border/40 px-4 py-16">
+      <section id="experience" className="border-b border-border/40 px-4 py-16">
         <div className="mx-auto max-w-6xl">
           <h2 className="mb-10 text-3xl font-bold">Опыт работы</h2>
           <div className="relative space-y-8 pl-8 before:absolute before:left-3 before:top-2 before:h-[calc(100%-1rem)] before:w-0.5 before:bg-gradient-to-b before:from-blue-500 before:via-purple-500 before:to-indigo-500">
@@ -141,7 +204,7 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section className="border-b border-border/40 px-4 py-16">
+      <section id="skills" className="border-b border-border/40 px-4 py-16">
         <div className="mx-auto max-w-6xl">
           <h2 className="mb-10 text-3xl font-bold">Навыки и технологии</h2>
           <div className="grid gap-6 md:grid-cols-3">
