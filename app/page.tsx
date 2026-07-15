@@ -31,7 +31,12 @@ export default function Home() {
         <div className="relative mx-auto max-w-6xl">
           <div className="flex flex-col items-center gap-8 text-center">
             <div className="flex h-24 w-24 items-center justify-center rounded-full bg-muted sm:h-28 sm:w-28">
-              <Image className="h-10 w-10 text-muted-foreground/50" />
+             {profile.avatar ? (
+  <img src={profile.avatar} alt={profile.name} className="h-full w-full rounded-full object-cover" />
+) : (
+  <Image className="h-10 w-10 text-muted-foreground/50" />
+)}
+
             </div>
             <div>
               <h1 className="mb-2 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
