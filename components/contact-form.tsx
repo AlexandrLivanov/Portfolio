@@ -49,23 +49,6 @@ export function ContactForm() {
     }
   };
 
-    e.preventDefault();
-    setErrors({});
-
-    const result = contactSchema.safeParse(form);
-    if (!result.success) {
-      const fieldErrors: Record<string, string> = {};
-      result.error.errors.forEach((err) => {
-        fieldErrors[err.path[0] as string] = err.message;
-      });
-      setErrors(fieldErrors);
-      return;
-    }
-
-    toast.success("Сообщение отправлено! Я свяжусь с вами в ближайшее время.");
-    setForm({ name: "", email: "", message: "" });
-  };
-
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <div>
