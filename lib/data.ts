@@ -166,7 +166,7 @@ export const projects = [
     fullDescription:
       "Арт-объект с кинетикой и led-растениями установили на катке Флагшток, затем перенесли в ТЦ Галерея. В СПб, Казани, Калининграде и Нижнем Новгороде прошли промо-акции для увеличения установок приложения и участия в конкурсе «Выиграй шоппинг с Николаем Овечкиным». Экспозиция стала площадкой акций и лекций блогера. За установку приложения участники получали призы и шанс выиграть шопинг до 100 000 рублей.",
     role: "Креативный продюсер",
-    image: "https://github.com/AlexandrLivanov/Portfolio/blob/main/%D0%9F%D1%80%D0%BE%D1%80%D0%BE%D0%BA.png?raw=true",
+    image: "https://github.com/AlexandrLivanov/Portfolio/blob/main/%D0%AF%D0%BF%D0%BF%D0%B8.png?raw=true",
     links: {} as Record<string, string>,
   },
   {
