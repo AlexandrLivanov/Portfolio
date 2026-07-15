@@ -15,7 +15,40 @@ export function ContactForm() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setErrors({});
+
+    const result = contactSchema.safeParse(form);
+    if (!result.success) {
+      const fieldErrors: Record<string, string> = {};
+      result.error.errors.forEach((err) => {
+        fieldErrors[err.path[0] as string] = err.message;
+      });
+      setErrors(fieldErrors);
+      return;
+    }
+
+    const loading = toast.loading("Отправка...");
+
+    try {
+      const response = await fetch("https://formspree.io/f/xgogoelr", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (response.ok) {
+        toast.success("Сообщение отправлено! Я свяжусь с вами в ближайшее время.", { id: loading });
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        toast.error("Ошибка при отправке. Попробуйте позже.", { id: loading });
+      }
+    } catch {
+      toast.error("Ошибка при отправке. Попробуйте позже.", { id: loading });
+    }
+  };
+
     e.preventDefault();
     setErrors({});
 
