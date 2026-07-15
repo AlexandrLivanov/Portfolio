@@ -33,15 +33,25 @@ export function ProjectGallery({
   projects: Project[];
   categories: readonly Category[];
 }) {
-  const [activeCategory, setActiveCategory] = useState("event");
+  const [activeCategory, setActiveCategory] = useState("all");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const filtered = projects.filter((p) => p.category === activeCategory);
+  const filtered = activeCategory === "all" ? projects : projects.filter((p) => p.category === activeCategory);
 
   return (
     <>
       {/* Category Tabs */}
       <div className="mb-8 flex flex-wrap gap-2">
+        <button
+          onClick={() => setActiveCategory("all")}
+          className={`rounded-full px-5 py-2 text-sm font-medium transition-all ${
+            activeCategory === "all"
+              ? "bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 text-white shadow-lg"
+              : "bg-secondary text-muted-foreground hover:bg-secondary/80"
+          }`}
+        >
+          Все
+        </button>
         {categories.map((cat) => (
           <button
             key={cat.id}
