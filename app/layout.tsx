@@ -19,15 +19,13 @@ export default function RootLayout({
     <html lang="ru" className="dark">
       <body className="antialiased">
         <div className="neon-bg" aria-hidden="true">
-  <div className="neon-orb" />
-  <div className="neon-orb" />
-  <div className="neon-orb" />
-  <div className="neon-orb" />
-  <div className="neon-line" />
-  <div className="neon-line" />
-  <div className="neon-line" />
-  <div className="neon-line" />
-</div>
+          <div className="neon-wave" />
+          <div className="neon-wave" />
+          <div className="neon-wave" />
+          <div className="neon-wave" />
+          <div className="neon-wave" />
+          <div className="neon-wave" />
+        </div>
         {children}
         <Toaster position="bottom-right" theme="dark" />
         <footer className="border-t border-border/40 py-6 text-center text-sm text-muted-foreground">
