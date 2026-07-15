@@ -113,21 +113,26 @@ body {
 }
 
 @keyframes wave1 {
-  0% { transform: translateX(-100%) translateY(0px); }
-  50% { transform: translateX(50%) translateY(-30px); }
-  100% { transform: translateX(200%) translateY(0px); }
+  0% { transform: translateX(-150%) translateY(0px) scaleX(1); }
+  25% { transform: translateX(-50%) translateY(-40px) scaleX(1.2); }
+  50% { transform: translateX(50%) translateY(20px) scaleX(0.8); }
+  75% { transform: translateX(100%) translateY(-30px) scaleX(1.1); }
+  100% { transform: translateX(250%) translateY(0px) scaleX(1); }
 }
 
 @keyframes wave2 {
-  0% { transform: translateX(100%) translateY(0px); }
-  50% { transform: translateX(-50%) translateY(20px); }
-  100% { transform: translateX(-200%) translateY(0px); }
+  0% { transform: translateX(150%) translateY(0px) scaleX(1); }
+  25% { transform: translateX(50%) translateY(30px) scaleX(0.9); }
+  50% { transform: translateX(-50%) translateY(-20px) scaleX(1.3); }
+  75% { transform: translateX(-100%) translateY(40px) scaleX(0.8); }
+  100% { transform: translateX(-250%) translateY(0px) scaleX(1); }
 }
 
 @keyframes wave3 {
-  0% { transform: translateX(-50%) translateY(0px); }
-  50% { transform: translateX(80%) translateY(-40px); }
-  100% { transform: translateX(250%) translateY(0px); }
+  0% { transform: translateX(-100%) translateY(0px) scaleY(1); }
+  33% { transform: translateX(30%) translateY(-50px) scaleY(1.5); }
+  66% { transform: translateX(120%) translateY(30px) scaleY(0.7); }
+  100% { transform: translateX(300%) translateY(0px) scaleY(1); }
 }
 
 .neon-bg {
@@ -140,55 +145,92 @@ body {
 
 .neon-wave {
   position: absolute;
-  width: 200%;
-  height: 3px;
+  width: 250%;
+  height: 4px;
   border-radius: 50%;
-  opacity: 0.25;
+  filter: blur(3px);
+  opacity: 0.35;
+}
+
+.neon-wave::before,
+.neon-wave::after {
+  content: "";
+  position: absolute;
+  inset: -20px -60px;
+  border-radius: 50%;
+  filter: blur(30px);
+  opacity: 0.5;
 }
 
 .neon-wave:nth-child(1) {
-  top: 15%;
+  top: 12%;
   background: linear-gradient(90deg, transparent, #3b82f6, #8b5cf6, transparent);
-  animation: wave1 8s ease-in-out infinite;
-  height: 2px;
+  animation: wave1 6s ease-in-out infinite;
+  height: 3px;
+  opacity: 0.4;
+}
+
+.neon-wave:nth-child(1)::before {
+  background: linear-gradient(90deg, transparent, #3b82f6, transparent);
 }
 
 .neon-wave:nth-child(2) {
-  top: 30%;
+  top: 28%;
   background: linear-gradient(90deg, transparent, #6366f1, #06b6d4, transparent);
-  animation: wave2 10s ease-in-out infinite;
-  height: 1.5px;
-  opacity: 0.2;
+  animation: wave2 8s ease-in-out infinite;
+  height: 2.5px;
+  opacity: 0.3;
+}
+
+.neon-wave:nth-child(2)::before {
+  background: linear-gradient(90deg, transparent, #6366f1, transparent);
 }
 
 .neon-wave:nth-child(3) {
-  top: 50%;
+  top: 45%;
   background: linear-gradient(90deg, transparent, #8b5cf6, #3b82f6, transparent);
-  animation: wave3 7s ease-in-out infinite;
-  height: 2.5px;
-  opacity: 0.2;
+  animation: wave3 5s ease-in-out infinite;
+  height: 4px;
+  opacity: 0.35;
+}
+
+.neon-wave:nth-child(3)::before {
+  background: linear-gradient(90deg, transparent, #8b5cf6, transparent);
 }
 
 .neon-wave:nth-child(4) {
-  top: 65%;
+  top: 60%;
   background: linear-gradient(90deg, transparent, #06b6d4, #6366f1, transparent);
-  animation: wave1 9s ease-in-out infinite;
-  height: 1.5px;
-  opacity: 0.15;
+  animation: wave1 7s ease-in-out infinite;
+  height: 2px;
+  opacity: 0.25;
+}
+
+.neon-wave:nth-child(4)::before {
+  background: linear-gradient(90deg, transparent, #06b6d4, transparent);
 }
 
 .neon-wave:nth-child(5) {
-  top: 80%;
+  top: 75%;
   background: linear-gradient(90deg, transparent, #3b82f6, #8b5cf6, transparent);
-  animation: wave2 11s ease-in-out infinite;
-  height: 2px;
-  opacity: 0.2;
+  animation: wave2 9s ease-in-out infinite;
+  height: 3px;
+  opacity: 0.3;
+}
+
+.neon-wave:nth-child(5)::before {
+  background: linear-gradient(90deg, transparent, #3b82f6, transparent);
 }
 
 .neon-wave:nth-child(6) {
-  top: 40%;
+  top: 90%;
   background: linear-gradient(90deg, transparent, #a78bfa, #6366f1, transparent);
-  animation: wave3 6s ease-in-out infinite;
-  height: 1px;
-  opacity: 0.3;
+  animation: wave3 6.5s ease-in-out infinite;
+  height: 2px;
+  opacity: 0.35;
 }
+
+.neon-wave:nth-child(6)::before {
+  background: linear-gradient(90deg, transparent, #a78bfa, transparent);
+}
+
