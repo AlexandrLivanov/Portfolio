@@ -34,40 +34,40 @@ export default function Home() {
         <div className="relative mx-auto max-w-6xl">
           <div className="flex flex-col items-center gap-4 md:flex-row md:items-start md:justify-between md:gap-10">
             {/* Left: Text */}
-            <div className="flex-1 pt-4 text-center md:text-left md:pt-8">
-              <h1 className="mb-1 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+            <div className="flex-1 pt-0 text-center md:text-left">
+              <h1 className="mb-2 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
                 {profile.name}
               </h1>
-              <p className="mb-1 text-lg text-blue-200 sm:text-xl">
+              <p className="mb-2 text-xl text-blue-200 sm:text-2xl">
                 {profile.title}
               </p>
-              <p className="mb-4 text-base font-medium text-blue-300 sm:text-lg">
+              <p className="gradient-text mb-6 text-lg font-medium sm:text-xl">
                 {profile.tagline}
               </p>
-              <div className="flex flex-wrap justify-center gap-2 md:justify-start">
+              <div className="flex flex-wrap justify-center gap-3 md:justify-start">
                 {profile.socials.map((social) => (
                   <a
                     key={social.label}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-900/50 px-3 py-1.5 text-xs font-medium text-blue-100 transition-all hover:scale-105 hover:bg-blue-800/50"
+                    className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-900/50 px-4 py-2 text-sm font-medium text-blue-100 transition-all hover:scale-105 hover:bg-blue-800/50"
                   >
                     {social.label}
                   </a>
                 ))}
                 <a
                   href={`tel:${profile.phone}`}
-                  className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-900/50 px-3 py-1.5 text-xs font-medium text-blue-100 transition-all hover:scale-105 hover:bg-blue-800/50"
+                  className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-900/50 px-4 py-2 text-sm font-medium text-blue-100 transition-all hover:scale-105 hover:bg-blue-800/50"
                 >
-                  <Phone className="h-3 w-3" />
+                  <Phone className="h-4 w-4" />
                   {profile.phone}
                 </a>
                 <a
                   href={`mailto:${profile.email}`}
-                  className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-900/50 px-3 py-1.5 text-xs font-medium text-blue-100 transition-all hover:scale-105 hover:bg-blue-800/50"
+                  className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-900/50 px-4 py-2 text-sm font-medium text-blue-100 transition-all hover:scale-105 hover:bg-blue-800/50"
                 >
-                  <Mail className="h-3 w-3" />
+                  <Mail className="h-4 w-4" />
                   {profile.email}
                 </a>
               </div>
@@ -75,9 +75,9 @@ export default function Home() {
                 href="https://drive.google.com/drive/folders/1n1yExstearYnEaTfkah6Hmr6ZPMj8LS4?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-3 inline-flex w-full max-w-md items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 px-5 py-2.5 text-sm font-medium text-white shadow-lg transition-all hover:scale-105 md:w-auto"
+                className="mt-4 inline-flex w-full max-w-md items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 px-6 py-3 text-sm font-medium text-white shadow-lg transition-all hover:scale-105 md:w-auto"
               >
-                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
                 Скачать резюме и портфолио PDF
