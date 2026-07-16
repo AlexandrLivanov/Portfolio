@@ -29,7 +29,7 @@ export default function Home() {
       <SideMenu />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-blue-950 px-4 pb-0 pt-10 sm:pt-14">
+      <section className="relative overflow-hidden bg-blue-950 px-4 pb-8 pt-10 sm:pt-14">
         <div className="pattern-grid absolute inset-0 opacity-30" />
         <div className="relative mx-auto max-w-6xl">
           <div className="flex flex-col items-center gap-4 md:flex-row md:items-start md:justify-between md:gap-10">
