@@ -29,68 +29,80 @@ export default function Home() {
       <SideMenu />
 
       {/* Hero Section */}
-      <section className="gradient-hero-dark relative overflow-hidden px-4 pb-20 pt-16 sm:pt-24">
+      <section className="gradient-hero-dark relative overflow-hidden px-4 pb-16 pt-16 sm:pt-20">
         <div className="pattern-grid absolute inset-0 opacity-30" />
         <div className="relative mx-auto max-w-6xl">
-          <div className="flex flex-col items-center gap-8 text-center">
-            <div className="flex h-96 w-96 items-center justify-center sm:h-112 sm:w-112">
-              {profile.avatar ? (
-                <img src={profile.avatar} alt={profile.name} className="h-full w-full object-contain" />
-              ) : (
-                <Image className="h-10 w-10 text-muted-foreground/50" />
-              )}
-            </div>
-
-            <div>
+          <div className="flex flex-col items-center gap-6 md:flex-row md:items-center md:justify-between md:gap-12">
+            {/* Left: Text */}
+            <div className="flex-1 text-center md:text-left">
               <h1 className="mb-2 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
                 {profile.name}
               </h1>
-              <p className="mb-4 text-xl text-muted-foreground sm:text-2xl">
+              <p className="mb-2 text-xl text-muted-foreground sm:text-2xl">
                 {profile.title}
               </p>
-              <p className="gradient-text text-lg font-medium sm:text-xl">
+              <p className="gradient-text mb-6 text-lg font-medium sm:text-xl">
                 {profile.tagline}
               </p>
-            </div>
-            <div className="flex flex-wrap justify-center gap-4">
-              {profile.socials.map((social) => (
+              <div className="flex flex-wrap justify-center gap-3 md:justify-start">
+                {profile.socials.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="gradient-border inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-foreground transition-all hover:scale-105"
+                  >
+                    {social.label}
+                  </a>
+                ))}
                 <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`tel:${profile.phone}`}
                   className="gradient-border inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-foreground transition-all hover:scale-105"
                 >
-                  {social.label}
+                  <Phone className="h-4 w-4" />
+                  {profile.phone}
                 </a>
-              ))}
+                <a
+                  href={`mailto:${profile.email}`}
+                  className="gradient-border inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-foreground transition-all hover:scale-105"
+                >
+                  <Mail className="h-4 w-4" />
+                  {profile.email}
+                </a>
+              </div>
               <a
-                href={`tel:${profile.phone}`}
-                className="gradient-border inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-foreground transition-all hover:scale-105"
+                href="https://drive.google.com/drive/folders/1n1yExstearYnEaTfkah6Hmr6ZPMj8LS4?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex w-full max-w-md items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 px-6 py-3 text-sm font-medium text-white shadow-lg transition-all hover:scale-105 md:w-auto"
               >
-                <Phone className="h-4 w-4" />
-                {profile.phone}
-              </a>
-              <a
-                href={`mailto:${profile.email}`}
-                className="gradient-border inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-foreground transition-all hover:scale-105"
-              >
-                <Mail className="h-4 w-4" />
-                {profile.email}
+                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Скачать резюме и портфолио PDF
               </a>
             </div>
 
-            <a
-              href="https://drive.google.com/drive/folders/1n1yExstearYnEaTfkah6Hmr6ZPMj8LS4?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 inline-flex w-full max-w-md items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 px-6 py-3 text-sm font-medium text-white shadow-lg transition-all hover:scale-105"
-            >
-              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              Скачать резюме и портфолио PDF
-            </a>
+            {/* Right: Photo */}
+            <div className="relative shrink-0">
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
+              {profile.avatar ? (
+                <img
+                  src={profile.avatar}
+                  alt={profile.name}
+                  className="h-64 w-64 object-contain sm:h-72 sm:w-72"
+                  style={{
+                    maskImage: "radial-gradient(ellipse 70% 60% at 50% 40%, black 60%, transparent 100%)",
+                    WebkitMaskImage: "radial-gradient(ellipse 70% 60% at 50% 40%, black 60%, transparent 100%)",
+                  }}
+                />
+              ) : (
+                <div className="flex h-64 w-64 items-center justify-center sm:h-72 sm:w-72">
+                  <Image className="h-20 w-20 text-muted-foreground/30" />
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </section>
