@@ -33,6 +33,21 @@ export default function Home() {
         <div className="pattern-grid absolute inset-0 opacity-30" />
         <div className="relative mx-auto max-w-6xl">
           <div className="flex flex-col items-center gap-4 md:flex-row md:items-start md:justify-between md:gap-10">
+            {/* Right: Photo (mobile first) */}
+            <div className="relative shrink-0 order-first md:order-last -mb-1">
+              {profile.avatar ? (
+                <img
+                  src={profile.avatar}
+                  alt={profile.name}
+                  className="h-120 w-120 object-contain sm:h-144 sm:w-144"
+                />
+              ) : (
+                <div className="flex h-120 w-120 items-center justify-center sm:h-144 sm:w-144">
+                  <Image className="h-20 w-20 text-blue-300/30" />
+                </div>
+              )}
+            </div>
+
             {/* Left: Text */}
             <div className="flex-1 pt-0 text-center md:text-left">
               <h1 className="mb-2 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
@@ -82,21 +97,6 @@ export default function Home() {
                 </svg>
                 Скачать резюме и портфолио PDF
               </a>
-            </div>
-
-            {/* Right: Photo */}
-            <div className="relative shrink-0 -mb-1">
-              {profile.avatar ? (
-                <img
-                  src={profile.avatar}
-                  alt={profile.name}
-                  className="h-120 w-120 object-contain sm:h-144 sm:w-144"
-                />
-              ) : (
-                <div className="flex h-120 w-120 items-center justify-center sm:h-144 sm:w-144">
-                  <Image className="h-20 w-20 text-blue-300/30" />
-                </div>
-              )}
             </div>
           </div>
         </div>
