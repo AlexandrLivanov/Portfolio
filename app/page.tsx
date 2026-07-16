@@ -29,19 +29,19 @@ export default function Home() {
       <SideMenu />
 
       {/* Hero Section */}
-      <section className="gradient-hero-dark relative overflow-hidden px-4 pb-16 pt-16 sm:pt-20">
+      <section className="relative overflow-hidden bg-blue-950 px-4 pb-0 pt-16 sm:pt-20">
         <div className="pattern-grid absolute inset-0 opacity-30" />
         <div className="relative mx-auto max-w-6xl">
-          <div className="flex flex-col items-center gap-6 md:flex-row md:items-center md:justify-between md:gap-12">
+          <div className="flex flex-col items-center gap-6 md:flex-row md:items-start md:justify-between md:gap-12">
             {/* Left: Text */}
-            <div className="flex-1 text-center md:text-left">
-              <h1 className="mb-2 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+            <div className="flex-1 pt-8 text-center md:text-left md:pt-12">
+              <h1 className="mb-2 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
                 {profile.name}
               </h1>
-              <p className="mb-2 text-xl text-muted-foreground sm:text-2xl">
+              <p className="mb-2 text-xl text-blue-200 sm:text-2xl">
                 {profile.title}
               </p>
-              <p className="gradient-text mb-6 text-lg font-medium sm:text-xl">
+              <p className="mb-6 text-lg font-medium text-blue-300 sm:text-xl">
                 {profile.tagline}
               </p>
               <div className="flex flex-wrap justify-center gap-3 md:justify-start">
@@ -51,21 +51,21 @@ export default function Home() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="gradient-border inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-foreground transition-all hover:scale-105"
+                    className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-900/50 px-4 py-2 text-sm font-medium text-blue-100 transition-all hover:scale-105 hover:bg-blue-800/50"
                   >
                     {social.label}
                   </a>
                 ))}
                 <a
                   href={`tel:${profile.phone}`}
-                  className="gradient-border inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-foreground transition-all hover:scale-105"
+                  className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-900/50 px-4 py-2 text-sm font-medium text-blue-100 transition-all hover:scale-105 hover:bg-blue-800/50"
                 >
                   <Phone className="h-4 w-4" />
                   {profile.phone}
                 </a>
                 <a
                   href={`mailto:${profile.email}`}
-                  className="gradient-border inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-foreground transition-all hover:scale-105"
+                  className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-900/50 px-4 py-2 text-sm font-medium text-blue-100 transition-all hover:scale-105 hover:bg-blue-800/50"
                 >
                   <Mail className="h-4 w-4" />
                   {profile.email}
@@ -85,21 +85,16 @@ export default function Home() {
             </div>
 
             {/* Right: Photo */}
-            <div className="relative shrink-0">
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
+            <div className="relative shrink-0 -mb-1">
               {profile.avatar ? (
                 <img
                   src={profile.avatar}
                   alt={profile.name}
-                  className="h-64 w-64 object-contain sm:h-72 sm:w-72"
-                  style={{
-                    maskImage: "radial-gradient(ellipse 70% 60% at 50% 40%, black 60%, transparent 100%)",
-                    WebkitMaskImage: "radial-gradient(ellipse 70% 60% at 50% 40%, black 60%, transparent 100%)",
-                  }}
+                  className="h-80 w-80 object-contain sm:h-96 sm:w-96"
                 />
               ) : (
-                <div className="flex h-64 w-64 items-center justify-center sm:h-72 sm:w-72">
-                  <Image className="h-20 w-20 text-muted-foreground/30" />
+                <div className="flex h-80 w-80 items-center justify-center sm:h-96 sm:w-96">
+                  <Image className="h-20 w-20 text-blue-300/30" />
                 </div>
               )}
             </div>
