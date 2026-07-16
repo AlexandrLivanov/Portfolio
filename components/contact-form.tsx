@@ -35,11 +35,12 @@ export function ContactForm() {
       const response = await fetch("https://formspree.io/f/xgogoelr", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          message: form.message,
-        }),
+       body: JSON.stringify({
+  name: form.name,
+  contact: form.email,
+  message: form.message,
+}),
+
       });
 
       if (response.ok) {
