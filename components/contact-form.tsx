@@ -90,6 +90,13 @@ export function ContactForm() {
           <p className="mt-1 text-xs text-red-400">{errors.message}</p>
         )}
       </div>
+      <p className="text-xs text-muted-foreground text-center">
+  Нажимая «Отправить», вы соглашаетесь с{' '}
+  <a href="/privacy-policy.html" target="_blank" className="text-blue-400 underline hover:text-blue-300">
+    Политикой конфиденциальности
+  </a>
+</p>
+
       <button
         type="submit"
         className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 px-6 py-3 text-sm font-medium text-white transition-all hover:scale-[1.02]"
