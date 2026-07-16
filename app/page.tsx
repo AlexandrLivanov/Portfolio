@@ -90,7 +90,7 @@ export default function Home() {
                 <img
                   src={profile.avatar}
                   alt={profile.name}
-                  className="h-80 w-80 object-contain sm:h-96 sm:w-96"
+className="h-120 w-120 object-contain sm:h-144 sm:w-144"
                 />
               ) : (
                 <div className="flex h-80 w-80 items-center justify-center sm:h-96 sm:w-96">
