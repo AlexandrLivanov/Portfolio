@@ -7,12 +7,12 @@ import { toast } from "sonner";
 
 const contactSchema = z.object({
   name: z.string().min(1, "Имя обязательно"),
-  contact: z.string().min(1, "Укажите email или телефон"),
+  email: z.string().min(1, "Укажите email или телефон"),
   message: z.string().min(1, "Сообщение обязательно"),
 });
 
 export function ContactForm() {
-  const [form, setForm] = useState({ name: "", contact: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [errors, setErrors] = useState({} as Record<string, string>);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -37,14 +37,14 @@ export function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: form.name,
-          email: form.contact,
+          email: form.email,
           message: form.message,
         }),
       });
 
       if (response.ok) {
         toast.success("Сообщение отправлено! Я свяжусь с вами в ближайшее время.", { id: loading });
-        setForm({ name: "", contact: "", message: "" });
+        setForm({ name: "", email: "", message: "" });
       } else {
         toast.error("Ошибка при отправке. Попробуйте позже.", { id: loading });
       }
@@ -72,13 +72,13 @@ export function ContactForm() {
         <label className="mb-1 block text-sm font-medium">Email или телефон</label>
         <input
           type="text"
-          value={form.contact}
-          onChange={(e) => setForm({ ...form, contact: e.target.value })}
+          value={form.email}
+          onChange={(e) => setForm({ ...form, email: e.target.value })}
           className="w-full rounded-xl border border-border/40 bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-blue-500"
           placeholder="your@email.com или +7 999 123 45 67"
         />
-        {errors.contact && (
-          <p className="mt-1 text-xs text-red-400">{errors.contact}</p>
+        {errors.email && (
+          <p className="mt-1 text-xs text-red-400">{errors.email}</p>
         )}
       </div>
       <div>
