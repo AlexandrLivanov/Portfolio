@@ -33,7 +33,7 @@ export default function Home() {
         <div className="pattern-grid absolute inset-0 opacity-30" />
         <div className="relative mx-auto max-w-6xl">
           <div className="flex flex-col items-center gap-8 text-center">
-            <div className="flex h-48 w-48 items-center justify-center sm:h-56 sm:w-56">
+            <div className="flex h-96 w-96 items-center justify-center sm:h-112 sm:w-112">
               {profile.avatar ? (
                 <img src={profile.avatar} alt={profile.name} className="h-full w-full object-contain" />
               ) : (
