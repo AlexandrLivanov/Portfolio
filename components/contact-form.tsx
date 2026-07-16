@@ -7,12 +7,12 @@ import { toast } from "sonner";
 
 const contactSchema = z.object({
   name: z.string().min(1, "Имя обязательно"),
-  email: z.string().email("Некорректный email"),
+  contact: z.string().min(1, "Укажите email или телефон"),
   message: z.string().min(1, "Сообщение обязательно"),
 });
 
 export function ContactForm() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", contact: "", message: "" });
   const [errors, setErrors] = useState({} as Record<string, string>);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -35,12 +35,16 @@ export function ContactForm() {
       const response = await fetch("https://formspree.io/f/xgogoelr", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          name: form.name,
+          email: form.contact,
+          message: form.message,
+        }),
       });
 
       if (response.ok) {
         toast.success("Сообщение отправлено! Я свяжусь с вами в ближайшее время.", { id: loading });
-        setForm({ name: "", email: "", message: "" });
+        setForm({ name: "", contact: "", message: "" });
       } else {
         toast.error("Ошибка при отправке. Попробуйте позже.", { id: loading });
       }
@@ -65,16 +69,16 @@ export function ContactForm() {
         )}
       </div>
       <div>
-        <label className="mb-1 block text-sm font-medium">Email</label>
+        <label className="mb-1 block text-sm font-medium">Email или телефон</label>
         <input
-          type="email"
-          value={form.email}
-          onChange={(e) => setForm({ ...form, email: e.target.value })}
+          type="text"
+          value={form.contact}
+          onChange={(e) => setForm({ ...form, contact: e.target.value })}
           className="w-full rounded-xl border border-border/40 bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-blue-500"
-          placeholder="your@email.com"
+          placeholder="your@email.com или +7 999 123 45 67"
         />
-        {errors.email && (
-          <p className="mt-1 text-xs text-red-400">{errors.email}</p>
+        {errors.contact && (
+          <p className="mt-1 text-xs text-red-400">{errors.contact}</p>
         )}
       </div>
       <div>
@@ -91,12 +95,11 @@ export function ContactForm() {
         )}
       </div>
       <p className="text-xs text-muted-foreground text-center">
-  Нажимая «Отправить», вы соглашаетесь с{' '}
-  <a href="/privacy-policy.html" target="_blank" className="text-blue-400 underline hover:text-blue-300">
-    Политикой конфиденциальности
-  </a>
-</p>
-
+        Нажимая «Отправить», вы соглашаетесь с{' '}
+        <a href="/privacy-policy.html" target="_blank" className="text-blue-400 underline hover:text-blue-300">
+          Политикой конфиденциальности
+        </a>
+      </p>
       <button
         type="submit"
         className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 px-6 py-3 text-sm font-medium text-white transition-all hover:scale-[1.02]"
