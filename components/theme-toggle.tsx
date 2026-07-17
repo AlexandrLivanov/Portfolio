@@ -13,15 +13,15 @@ export function ThemeToggle() {
   return (
     <button
       onClick={() => setDark(!dark)}
-      className="fixed right-4 top-4 z-50 flex items-center gap-3 rounded-full border border-white/20 bg-white/5 backdrop-blur-md px-4 py-2.5 transition-all hover:border-violet-500/50 hover:shadow-lg hover:shadow-violet-500/20"
+      className="fixed right-4 top-4 z-50 flex items-center gap-3 rounded-full border border-white/20 bg-white/5 backdrop-blur-md px-5 py-3 transition-all hover:border-violet-500/50 hover:shadow-lg hover:shadow-violet-500/20"
     >
-      <span className="text-xs font-medium text-white/70 uppercase tracking-wider">
-        {dark ? "Тёмная" : "Светлая"}
+      <span className="text-sm font-medium text-white/80">
+        {dark ? "Тёмная тема" : "Светлая тема"}
       </span>
-      <div className="relative h-5 w-9 rounded-full bg-white/10 transition-colors">
+      <div className="relative h-6 w-11 rounded-full bg-white/15 transition-colors">
         <div
-          className={`absolute top-0.5 h-4 w-4 rounded-full bg-white shadow-md transition-all duration-300 ${
-            dark ? "left-0.5" : "left-[18px]"
+          className={`absolute top-0.5 h-5 w-5 rounded-full bg-white shadow-md transition-all duration-300 ${
+            dark ? "left-0.5" : "left-[22px]"
           }`}
         />
       </div>
