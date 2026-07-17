@@ -28,44 +28,24 @@ export default function Home() {
     <div className="relative min-h-screen z-10">
       <SideMenu />
 
-      {/* Hero Section — Poster Style */}
-      <section className="relative min-h-screen flex items-start px-6 sm:px-10 lg:px-16 pt-20 sm:pt-24 overflow-hidden">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center px-6 sm:px-10 lg:px-16 pt-20 sm:pt-24 pb-16 overflow-hidden">
         <div className="relative w-full max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 lg:gap-16">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 lg:gap-16">
             
-            {/* Left — Vertical Title */}
-            <div className="relative lg:sticky lg:top-24">
-              <h1 className="hero-title-vertical hidden lg:block" style={{ height: "70vh", minHeight: "400px" }}>
-                {profile.name.split(" ")[0]}
+            {/* Left — Text */}
+            <div className="flex-1">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-4">
+                {profile.name}
               </h1>
-              {/* Mobile title */}
-              <h1 className="lg:hidden text-6xl sm:text-7xl font-extrabold tracking-tighter leading-none uppercase text-white">
-                {profile.name.split(" ")[0]}
-                <br />
-                <span className="gradient-text">{profile.name.split(" ")[1]}</span>
-              </h1>
-            </div>
-
-            {/* Right — Content */}
-            <div className="flex-1 flex flex-col items-start gap-6 lg:pt-16">
-              {/* Capsule with year */}
-              <div className="capsule animate-fade-in-up">
-                <span className="capsule-number">20</span>
-                <span className="capsule-number" style={{ marginTop: -4 }}>27</span>
-              </div>
-
-              {/* Tagline */}
-              <p className="text-sm sm:text-base text-white/60 max-w-md leading-relaxed animate-fade-in-up animate-fade-in-up-delay-1">
+              <p className="text-xl sm:text-2xl text-white/60 mb-2">
+                {profile.title}
+              </p>
+              <p className="gradient-text text-lg sm:text-xl font-medium mb-8">
                 {profile.tagline}
               </p>
 
-              {/* Small label */}
-              <p className="small-label animate-fade-in-up animate-fade-in-up-delay-2">
-                {profile.title}
-              </p>
-
-              {/* Contact pills */}
-              <div className="flex flex-wrap gap-3 animate-fade-in-up animate-fade-in-up-delay-3">
+              <div className="flex flex-wrap gap-3 mb-6">
                 {profile.socials.map((social) => (
                   <a
                     key={social.label}
@@ -88,38 +68,32 @@ export default function Home() {
                 </a>
               </div>
 
-              {/* Download button */}
               <a
                 href="https://drive.google.com/drive/folders/1n1yExstearYnEaTfkah6Hmr6ZPMj8LS4?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="pill-btn mt-2 animate-fade-in-up animate-fade-in-up-delay-4"
+                className="pill-btn"
               >
                 <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
                 Скачать резюме и портфолио PDF
               </a>
+            </div>
 
-              {/* Avatar — small and elegant */}
-              {profile.avatar && (
-                <div className="mt-6 animate-fade-in-up animate-fade-in-up-delay-4">
-                  <img
-                    src={profile.avatar}
-                    alt={profile.name}
-                    className="h-32 w-32 sm:h-40 sm:w-40 object-contain opacity-80 hover:opacity-100 transition-opacity"
-                  />
+            {/* Right — Photo */}
+            <div className="shrink-0">
+              {profile.avatar ? (
+                <img
+                  src={profile.avatar}
+                  alt={profile.name}
+                  className="h-80 w-80 sm:h-96 sm:w-96 lg:h-112 lg:w-112 object-contain"
+                />
+              ) : (
+                <div className="flex h-80 w-80 sm:h-96 sm:w-96 items-center justify-center bg-white/5 rounded-2xl">
+                  <Image className="h-20 w-20 text-white/20" />
                 </div>
               )}
-            </div>
-          </div>
-
-          {/* Bottom decorative elements */}
-          <div className="flex items-center justify-between mt-16 sm:mt-24 border-t border-white/5 pt-6">
-            <p className="small-label">CREATE FOR THE FUTURE</p>
-            <div className="flex items-center gap-3">
-              <span className="text-xs text-white/20">—</span>
-              <span className="small-label">2025</span>
             </div>
           </div>
         </div>
@@ -157,7 +131,7 @@ export default function Home() {
           </h2>
           <div className="relative space-y-6 pl-8 before:absolute before:left-3 before:top-2 before:h-[calc(100%-1rem)] before:w-px before:bg-gradient-to-b before:from-blue-500/30 before:via-violet-500/30 before:to-pink-500/30">
             {experience.map((exp) => (
-              <div key={exp.id} className="relative animate-fade-in-up">
+              <div key={exp.id} className="relative">
                 <div className="absolute -left-8 mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-white/5 border border-white/10">
                   <Briefcase className="h-3 w-3 text-white/40" />
                 </div>
