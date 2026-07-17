@@ -18,14 +18,8 @@ export default function RootLayout({
   return (
     <html lang="ru" className="dark">
       <body className="antialiased">
-        <div className="neon-bg" aria-hidden="true">
-          <div className="neon-wave" />
-          <div className="neon-wave" />
-          <div className="neon-wave" />
-          <div className="neon-wave" />
-          <div className="neon-wave" />
-          <div className="neon-wave" />
-        </div>
+        <div className="gradient-bg" aria-hidden="true" />
+        <div className="grain-overlay" aria-hidden="true" />
         {children}
         <Toaster position="bottom-right" theme="dark" />
         <footer className="border-t border-border/40 py-6 text-center text-sm text-muted-foreground">
