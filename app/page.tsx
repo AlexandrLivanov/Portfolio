@@ -19,111 +19,129 @@ import {
   Image,
   ExternalLink,
   Phone,
+  ArrowUpRight,
 } from "lucide-react";
-import { ContactForm } from "@/components/contact-form";
 import { SideMenu } from "@/components/side-menu";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="relative min-h-screen z-10">
       <SideMenu />
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-blue-950 px-4 pb-8 pt-10 sm:pt-14">
-        <div className="pattern-grid absolute inset-0 opacity-30" />
-        <div className="relative mx-auto max-w-6xl">
-          <div className="flex flex-col items-center gap-4 md:flex-row md:items-start md:justify-between md:gap-10">
-            {/* Right: Photo (mobile first) */}
-            <div className="relative shrink-0 order-first md:order-last -mb-1">
-              {profile.avatar ? (
-                <img
-                  src={profile.avatar}
-                  alt={profile.name}
-                  className="h-120 w-120 object-contain sm:h-144 sm:w-144"
-                />
-              ) : (
-                <div className="flex h-120 w-120 items-center justify-center sm:h-144 sm:w-144">
-                  <Image className="h-20 w-20 text-blue-300/30" />
-                </div>
-              )}
+      {/* Hero Section — Poster Style */}
+      <section className="relative min-h-screen flex items-start px-6 sm:px-10 lg:px-16 pt-20 sm:pt-24 overflow-hidden">
+        <div className="relative w-full max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 lg:gap-16">
+            
+            {/* Left — Vertical Title */}
+            <div className="relative lg:sticky lg:top-24">
+              <h1 className="hero-title-vertical hidden lg:block" style={{ height: "70vh", minHeight: "400px" }}>
+                {profile.name.split(" ")[0]}
+              </h1>
+              {/* Mobile title */}
+              <h1 className="lg:hidden text-6xl sm:text-7xl font-extrabold tracking-tighter leading-none uppercase text-white">
+                {profile.name.split(" ")[0]}
+                <br />
+                <span className="gradient-text">{profile.name.split(" ")[1]}</span>
+              </h1>
             </div>
 
-            {/* Left: Text */}
-            <div className="flex-1 pt-0 text-center md:text-left">
-              <h1 className="mb-2 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                {profile.name}
-              </h1>
-              <p className="mb-2 text-xl text-blue-200 sm:text-2xl">
-                {profile.title}
-              </p>
-              <p className="gradient-text mb-6 text-lg font-medium sm:text-xl">
+            {/* Right — Content */}
+            <div className="flex-1 flex flex-col items-start gap-6 lg:pt-16">
+              {/* Capsule with year */}
+              <div className="capsule animate-fade-in-up">
+                <span className="capsule-number">20</span>
+                <span className="capsule-number" style={{ marginTop: -4 }}>27</span>
+              </div>
+
+              {/* Tagline */}
+              <p className="text-sm sm:text-base text-white/60 max-w-md leading-relaxed animate-fade-in-up animate-fade-in-up-delay-1">
                 {profile.tagline}
               </p>
-              <div className="flex flex-wrap justify-center gap-3 md:justify-start">
+
+              {/* Small label */}
+              <p className="small-label animate-fade-in-up animate-fade-in-up-delay-2">
+                {profile.title}
+              </p>
+
+              {/* Contact pills */}
+              <div className="flex flex-wrap gap-3 animate-fade-in-up animate-fade-in-up-delay-3">
                 {profile.socials.map((social) => (
                   <a
                     key={social.label}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-900/50 px-4 py-2 text-sm font-medium text-blue-100 transition-all hover:scale-105 hover:bg-blue-800/50"
+                    className="pill-btn"
                   >
                     {social.label}
+                    <ArrowUpRight className="h-3 w-3" />
                   </a>
                 ))}
-                <a
-                  href={`tel:${profile.phone}`}
-                  className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-900/50 px-4 py-2 text-sm font-medium text-blue-100 transition-all hover:scale-105 hover:bg-blue-800/50"
-                >
-                  <Phone className="h-4 w-4" />
+                <a href={`tel:${profile.phone}`} className="pill-btn">
+                  <Phone className="h-3 w-3" />
                   {profile.phone}
                 </a>
-                <a
-                  href={`mailto:${profile.email}`}
-                  className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-900/50 px-4 py-2 text-sm font-medium text-blue-100 transition-all hover:scale-105 hover:bg-blue-800/50"
-                >
-                  <Mail className="h-4 w-4" />
+                <a href={`mailto:${profile.email}`} className="pill-btn">
+                  <Mail className="h-3 w-3" />
                   {profile.email}
                 </a>
               </div>
+
+              {/* Download button */}
               <a
                 href="https://drive.google.com/drive/folders/1n1yExstearYnEaTfkah6Hmr6ZPMj8LS4?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-flex w-full max-w-md items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 px-6 py-3 text-sm font-medium text-white shadow-lg transition-all hover:scale-105 md:w-auto"
+                className="pill-btn mt-2 animate-fade-in-up animate-fade-in-up-delay-4"
               >
-                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
                 Скачать резюме и портфолио PDF
               </a>
+
+              {/* Avatar — small and elegant */}
+              {profile.avatar && (
+                <div className="mt-6 animate-fade-in-up animate-fade-in-up-delay-4">
+                  <img
+                    src={profile.avatar}
+                    alt={profile.name}
+                    className="h-32 w-32 sm:h-40 sm:w-40 object-contain opacity-80 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Bottom decorative elements */}
+          <div className="flex items-center justify-between mt-16 sm:mt-24 border-t border-white/5 pt-6">
+            <p className="small-label">CREATE FOR THE FUTURE</p>
+            <div className="flex items-center gap-3">
+              <span className="text-xs text-white/20">—</span>
+              <span className="small-label">2025</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="border-b border-border/40 px-4 py-16">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid gap-8 md:grid-cols-3">
-            <div className="md:col-span-2">
-              <h2 className="mb-6 text-3xl font-bold">Обо мне</h2>
-              <div className="space-y-4 text-muted-foreground leading-relaxed whitespace-pre-line">
+      <section id="about" className="px-6 sm:px-10 lg:px-16 py-24">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid gap-12 lg:grid-cols-3">
+            <div className="lg:col-span-2">
+              <h2 className="text-4xl sm:text-5xl font-bold tracking-tighter mb-8">
+                <span className="gradient-text">Обо мне</span>
+              </h2>
+              <div className="space-y-4 text-white/60 leading-relaxed whitespace-pre-line text-sm sm:text-base max-w-2xl">
                 {profile.description}
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-1">
+            <div className="grid grid-cols-2 gap-4">
               {stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="gradient-border rounded-xl p-4 text-center"
-                >
-                  <div className="gradient-text text-3xl font-bold">
-                    {stat.value}
-                  </div>
-                  <div className="mt-1 text-sm text-muted-foreground">
-                    {stat.label}
-                  </div>
+                <div key={stat.label} className="glass-card p-5 text-center">
+                  <div className="gradient-text text-3xl font-bold">{stat.value}</div>
+                  <div className="mt-1 text-xs text-white/40 uppercase tracking-wider">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -132,29 +150,27 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="border-b border-border/40 px-4 py-16">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="mb-10 text-3xl font-bold">Опыт работы</h2>
-          <div className="relative space-y-8 pl-8 before:absolute before:left-3 before:top-2 before:h-[calc(100%-1rem)] before:w-0.5 before:bg-gradient-to-b before:from-blue-500 before:via-purple-500 before:to-indigo-500">
+      <section id="experience" className="px-6 sm:px-10 lg:px-16 py-24">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tighter mb-12">
+            <span className="gradient-text">Опыт работы</span>
+          </h2>
+          <div className="relative space-y-6 pl-8 before:absolute before:left-3 before:top-2 before:h-[calc(100%-1rem)] before:w-px before:bg-gradient-to-b before:from-blue-500/30 before:via-violet-500/30 before:to-pink-500/30">
             {experience.map((exp) => (
-              <div key={exp.id} className="relative">
-                <div className="absolute -left-8 mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/20">
-                  <Briefcase className="h-3 w-3 text-blue-400" />
+              <div key={exp.id} className="relative animate-fade-in-up">
+                <div className="absolute -left-8 mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-white/5 border border-white/10">
+                  <Briefcase className="h-3 w-3 text-white/40" />
                 </div>
-                <div className="gradient-border rounded-xl p-5">
-                  <div className="mb-1 flex flex-wrap items-baseline gap-2">
-                    <h3 className="text-lg font-semibold">{exp.company}</h3>
-                    <span className="text-sm text-muted-foreground">
-                      — {exp.position}
-                    </span>
+                <div className="glass-card p-5 sm:p-6">
+                  <div className="flex flex-wrap items-baseline gap-2 mb-1">
+                    <h3 className="text-base sm:text-lg font-semibold text-white">{exp.company}</h3>
+                    <span className="text-xs text-white/40">— {exp.position}</span>
                   </div>
-                  <div className="mb-2 flex items-center gap-1 text-sm text-blue-400">
-                    <Calendar className="h-3.5 w-3.5" />
+                  <div className="flex items-center gap-1 text-xs text-cyan-400/60 mb-2">
+                    <Calendar className="h-3 w-3" />
                     {exp.period}
                   </div>
-                  <p className="text-sm leading-relaxed text-muted-foreground">
-                    {exp.description}
-                  </p>
+                  <p className="text-sm text-white/50 leading-relaxed">{exp.description}</p>
                 </div>
               </div>
             ))}
@@ -163,30 +179,25 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="border-b border-border/40 px-4 py-16">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="mb-10 text-3xl font-bold">Навыки и технологии</h2>
-          <div className="grid gap-6 md:grid-cols-3">
+      <section id="skills" className="px-6 sm:px-10 lg:px-16 py-24">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tighter mb-12">
+            <span className="gradient-text">Навыки</span>
+          </h2>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {skills.map((category) => (
-              <div
-                key={category.category}
-                className="gradient-border rounded-xl p-6"
-              >
-                <h3 className="mb-4 text-lg font-semibold">
-                  {category.category}
-                </h3>
+              <div key={category.category} className="glass-card p-6">
+                <h3 className="text-sm uppercase tracking-wider text-white/40 mb-5">{category.category}</h3>
                 <div className="space-y-4">
                   {category.items.map((skill) => (
                     <div key={skill.name}>
-                      <div className="mb-1 flex justify-between text-sm">
-                        <span>{skill.name}</span>
-                        <span className="text-muted-foreground">
-                          {skill.level}%
-                        </span>
+                      <div className="flex justify-between text-sm mb-1">
+                        <span className="text-white/70">{skill.name}</span>
+                        <span className="text-white/30">{skill.level}%</span>
                       </div>
-                      <div className="h-2 overflow-hidden rounded-full bg-secondary">
+                      <div className="h-1 overflow-hidden rounded-full bg-white/5">
                         <div
-                          className="h-full rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 transition-all duration-500"
+                          className="h-full rounded-full bg-gradient-to-r from-blue-500/60 via-violet-500/60 to-pink-500/60 transition-all duration-500"
                           style={{ width: `${skill.level}%` }}
                         />
                       </div>
@@ -200,55 +211,39 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section className="border-b border-border/40 px-4 py-16" id="projects">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="mb-10 text-3xl font-bold">Портфолио проектов</h2>
-          <ProjectGallery
-            projects={projects}
-            categories={projectCategories}
-          />
+      <section className="px-6 sm:px-10 lg:px-16 py-24" id="projects">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tighter mb-12">
+            <span className="gradient-text">Портфолио</span>
+          </h2>
+          <ProjectGallery projects={projects} categories={projectCategories} />
         </div>
       </section>
 
       {/* Education Section */}
-      <section className="border-b border-border/40 px-4 py-16">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="mb-10 text-3xl font-bold">Образование</h2>
-          <div className="relative space-y-8 pl-8 before:absolute before:left-3 before:top-2 before:h-[calc(100%-1rem)] before:w-0.5 before:bg-gradient-to-b before:from-blue-500 before:via-purple-500 before:to-indigo-500">
+      <section className="px-6 sm:px-10 lg:px-16 py-24">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tighter mb-12">
+            <span className="gradient-text">Образование</span>
+          </h2>
+          <div className="relative space-y-6 pl-8 before:absolute before:left-3 before:top-2 before:h-[calc(100%-1rem)] before:w-px before:bg-gradient-to-b before:from-blue-500/30 before:via-violet-500/30 before:to-pink-500/30">
             {education.map((edu) => (
               <div key={edu.id} className="relative">
-                <div className="absolute -left-8 mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-purple-500/20">
-                  <GraduationCap className="h-3 w-3 text-purple-400" />
+                <div className="absolute -left-8 mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-white/5 border border-white/10">
+                  <GraduationCap className="h-3 w-3 text-white/40" />
                 </div>
-                <div className="gradient-border rounded-xl p-5">
-                  <h3 className="mb-1 text-lg font-semibold">
-                    {edu.institution}
-                  </h3>
-                  <p className="mb-1 text-sm text-muted-foreground">
-                    {edu.degree}
-                  </p>
-                  <div className="mb-2 flex items-center gap-1 text-sm text-purple-400">
-                    <Calendar className="h-3.5 w-3.5" />
+                <div className="glass-card p-5 sm:p-6">
+                  <h3 className="text-base sm:text-lg font-semibold text-white">{edu.institution}</h3>
+                  <p className="text-xs text-white/40 mb-1">{edu.degree}</p>
+                  <div className="flex items-center gap-1 text-xs text-cyan-400/60 mb-2">
+                    <Calendar className="h-3 w-3" />
                     {edu.period}
                   </div>
-                  <p className="text-sm leading-relaxed text-muted-foreground">
-                    {edu.description}
-                  </p>
+                  <p className="text-sm text-white/50">{edu.description}</p>
                 </div>
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="px-4 py-16" id="contact">
-        <div className="mx-auto max-w-2xl">
-          <h2 className="mb-4 text-center text-3xl font-bold">Свяжитесь со мной</h2>
-          <p className="mb-10 text-center text-muted-foreground">
-            Заполните форму, и я отвечу вам в ближайшее время
-          </p>
-          <ContactForm />
         </div>
       </section>
     </div>
