@@ -172,3 +172,40 @@ body {
 .animate-fade-in-up-delay-2 { animation-delay: 0.2s; }
 .animate-fade-in-up-delay-3 { animation-delay: 0.3s; }
 .animate-fade-in-up-delay-4 { animation-delay: 0.4s; }
+/* Light theme */
+.light {
+  --black: #f4f6ff;
+  --white: #050509;
+  --background: #f4f6ff;
+  --foreground: #050509;
+  --card: rgba(0, 0, 0, 0.03);
+  --border: rgba(0, 0, 0, 0.08);
+}
+
+.light .glass-card {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.light .pill-btn {
+  border-color: rgba(0, 0, 0, 0.2);
+  color: #050509;
+}
+
+.light .pill-btn:hover {
+  border-color: var(--violet);
+}
+
+.light .text-white\/60 { color: rgba(0, 0, 0, 0.6); }
+.light .text-white\/50 { color: rgba(0, 0, 0, 0.5); }
+.light .text-white\/40 { color: rgba(0, 0, 0, 0.4); }
+.light .text-white\/30 { color: rgba(0, 0, 0, 0.3); }
+.light .text-white\/70 { color: rgba(0, 0, 0, 0.7); }
+
+/* Particles */
+#particles-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
