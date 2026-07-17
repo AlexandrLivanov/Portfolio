@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "sonner";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { Particles } from "@/components/particles";
 
 const appName = "Александр Ливанов";
 
@@ -20,6 +22,8 @@ export default function RootLayout({
       <body className="antialiased">
         <div className="gradient-bg" aria-hidden="true" />
         <div className="grain-overlay" aria-hidden="true" />
+        <Particles />
+        <ThemeToggle />
         {children}
         <Toaster position="bottom-right" theme="dark" />
         <footer className="border-t border-border/40 py-6 text-center text-sm text-muted-foreground">
